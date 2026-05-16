@@ -1,0 +1,240 @@
+/* ===== СТИЛИ ДЛЯ ЛАБОРАТОРНОЙ РАБОТЫ №5 ===== */
+
+/* ----- 1. ГЛАВНОЕ МЕНЮ (горизонтальное) ----- */
+.main-menu {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ddcfa0;
+}
+
+.main-menu a {
+    padding: 8px 20px;
+    text-decoration: none;
+    background-color: #1e3a2f;
+    color: white;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.main-menu a:hover {
+    background-color: #ffb347;
+    color: #1e3a2f;
+}
+
+.main-menu a.selected {
+    background-color: #ffb347;
+    color: #1e3a2f;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* ----- 2. ОСНОВНОЕ МЕНЮ (вертикальное, слева) ----- */
+.side-menu {
+    float: left;
+    width: 180px;
+    background-color: #e8f0ee;
+    border-radius: 12px;
+    padding: 15px 10px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+}
+
+.side-menu a {
+    display: block;
+    text-decoration: none;
+    padding: 8px 15px;
+    margin: 5px 0;
+    background-color: #1e3a2f;
+    color: white;
+    border-radius: 6px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.side-menu a:hover {
+    background-color: #2e5a48;
+    color: #ffd966;
+}
+
+.side-menu a.selected {
+    background-color: #ffb347;
+    color: #1e3a2f;
+    font-weight: bold;
+}
+
+/* ----- 3. ТАБЛИЦА УМНОЖЕНИЯ ----- */
+.multiplication-content {
+    margin-left: 210px;
+    min-height: 400px;
+}
+
+/* Табличная верстка - полная таблица */
+.multiply-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fffaf2;
+}
+
+.multiply-table th {
+    background-color: #1e3a2f;
+    color: white;
+    padding: 12px;
+    font-size: 1.2rem;
+}
+
+.multiply-table td {
+    border: 1px solid #ddcfa0;
+    padding: 10px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 0.95rem;
+}
+
+.multiply-table tr:nth-child(even) {
+    background-color: #f9efdf;
+}
+
+/* Табличная верстка - один столбец */
+.multiply-single {
+    width: 300px;
+    border-collapse: collapse;
+    background-color: #fffaf2;
+    margin: 0 auto;
+}
+
+.multiply-single th {
+    background-color: #1e3a2f;
+    color: white;
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+.multiply-single td {
+    border: 1px solid #ddcfa0;
+    padding: 10px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+/* Блочная верстка - вся таблица (горизонтальные блоки) */
+.multiply-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.block-column {
+    background-color: #fffaf2;
+    border: 1px solid #ddcfa0;
+    border-radius: 12px;
+    padding: 12px;
+    min-width: 120px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.block-title {
+    background-color: #1e3a2f;
+    color: white;
+    padding: 8px;
+    margin: -12px -12px 10px -12px;
+    border-radius: 12px 12px 0 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.block-row {
+    padding: 6px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    border-bottom: 1px dashed #ddcfa0;
+}
+
+.block-row:last-child {
+    border-bottom: none;
+}
+
+/* Блочная верстка - один столбец */
+.multiply-single-block {
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: #fffaf2;
+    border: 1px solid #ddcfa0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.multiply-single-block .block-title {
+    margin: 0;
+    border-radius: 0;
+}
+
+.multiply-single-block .block-row {
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Ссылки-цифры */
+.num-link {
+    text-decoration: none;
+    color: #1e3a2f;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.num-link:hover {
+    background-color: #ffb347;
+    color: white;
+    text-decoration: underline;
+}
+
+/* Очистка float */
+.multiplication-content:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Адаптив */
+@media (max-width: 800px) {
+    .side-menu {
+        float: none;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .side-menu a {
+        display: inline-block;
+        padding: 5px 12px;
+        margin: 0;
+    }
+    
+    .multiplication-content {
+        margin-left: 0;
+    }
+    
+    .multiply-table td {
+        font-size: 0.7rem;
+        padding: 5px;
+    }
+    
+    .multiply-blocks {
+        gap: 10px;
+    }
+    
+    .block-column {
+        min-width: 100px;
+    }
+}
