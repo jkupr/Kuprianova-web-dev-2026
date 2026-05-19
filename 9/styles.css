@@ -1,0 +1,500 @@
+/* =============================================
+   ОБЩИЙ СБРОС И БАЗОВЫЕ СТИЛИ
+   ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f0e8;
+    color: #2c2c2c;
+    line-height: 1.5;
+    padding-top: 80px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =============================================
+   ШАПКА — фиксированная, тёмно-зелёный фон, белые буквы
+   ============================================= */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 80px;
+    background-color: #1e3a2f;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.uni-logo {
+    height: 50px;
+    width: auto;
+    max-width: 400px;
+    border-radius: 4px;
+}
+
+/* Информация о студенте */
+.student-info {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 5px 15px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.student-info p {
+    margin: 2px 0;
+    font-size: 0.8rem;
+    color: white;
+}
+
+/* Навигационное меню в шапке */
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    flex-shrink: 0;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.nav-menu a:hover {
+    background-color: #2e5a48;
+    color: #ffd966;
+}
+
+.nav-menu a.active {
+    background-color: #ffb347;
+    color: #1e3a2f;
+    font-weight: bold;
+}
+
+/* =============================================
+   ОСНОВНОЙ КОНТЕНТ
+   ============================================= */
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 25px 35px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    flex: 1;
+    width: 100%;
+}
+
+h1 {
+    color: #1e3a2f;
+    border-left: 6px solid #ffb347;
+    padding-left: 20px;
+    margin: 15px 0 20px 0;
+    font-size: 2.2rem;
+}
+
+h2 {
+    color: #2e5a48;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.7rem;
+    border-bottom: 2px solid #ffd966;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+p {
+    margin-bottom: 18px;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+/* =============================================
+   МЕНЮ САЙТА (nav#menu)
+   Согласно заданию: кнопки синего цвета, активный — красный
+   ============================================= */
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0 10px 0;
+    align-items: center;
+}
+
+/* Основные кнопки меню — синего цвета */
+.menu-btn {
+    display: inline-block;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.menu-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* Активный пункт основного меню — красный */
+.menu-btn.selected {
+    background-color: #dc2626;
+    color: white;
+}
+
+.menu-btn.selected:hover {
+    background-color: #b91c1c;
+}
+
+/* Подменю сортировки */
+#submenu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #ddcfa0;
+    width: 100%;
+}
+
+/* Кнопки подменю — меньше основных, тот же стиль (синий) */
+.submenu-btn {
+    display: inline-block;
+    background-color: #3b82f6;
+    color: white;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.submenu-btn:hover {
+    background-color: #2563eb;
+}
+
+/* Активный пункт подменю — красный */
+.submenu-btn.selected {
+    background-color: #dc2626;
+    color: white;
+}
+
+.submenu-btn.selected:hover {
+    background-color: #b91c1c;
+}
+
+/* =============================================
+   ТАБЛИЦА КОНТАКТОВ (viewer.php)
+   ============================================= */
+.food-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background-color: #fffaf2;
+    font-size: 0.9rem;
+}
+
+.food-table th,
+.food-table td {
+    border: 1px solid #ddcfa0;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.food-table th {
+    background-color: #1e3a2f;
+    color: white;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.food-table tr:nth-child(even) {
+    background-color: #f9efdf;
+}
+
+.food-table tr:hover {
+    background-color: #fff0d0;
+}
+
+/* =============================================
+   ПАГИНАЦИЯ (viewer.php)
+   ============================================= */
+#pages {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+#pages span {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Ссылки пагинации */
+#pages a {
+    display: inline-block;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #1e3a2f;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    transition: border 0.1s ease;
+}
+
+/* При наведении — рамка 2px (требование методички) */
+#pages a:hover {
+    border: 2px solid #1e3a2f;
+}
+
+/* Текущая страница пагинации — выделяется */
+#pages .current-page {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #1e3a2f;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+/* =============================================
+   ФОРМЫ (add.php, edit.php)
+   Все элементы одинакового размера, расположены друг под другом
+   ============================================= */
+form {
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1e3a2f;
+    margin-bottom: 5px;
+}
+
+/* Все поля ввода одинакового размера */
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ddcfa0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #fffaf2;
+    color: #2c2c2c;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1e3a2f;
+}
+
+.form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Кнопка отправки формы */
+.btn-submit {
+    padding: 10px 28px;
+    background-color: #1e3a2f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #2e5a48;
+}
+
+/* =============================================
+   СПИСОК ССЫЛОК (edit.php, delete.php)
+   ============================================= */
+#edit_links,
+#delete_links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0 25px 0;
+}
+
+#edit_links a,
+#delete_links a {
+    display: inline-block;
+    padding: 7px 14px;
+    background-color: #fffaf2;
+    border: 1px solid #ddcfa0;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #1e3a2f;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+#edit_links a:hover {
+    background-color: #ffd966;
+}
+
+/* Текущая запись в списке (edit.php) — выделена рамкой и фоном */
+#edit_links .current-link {
+    display: inline-block;
+    padding: 7px 14px;
+    background-color: #1e3a2f;
+    color: white;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 2px solid #ffb347;
+}
+
+/* Ссылки удаления — красноватый hover */
+.delete-link:hover {
+    background-color: #fee2e2 !important;
+    border-color: #dc2626 !important;
+    color: #dc2626 !important;
+}
+
+/* =============================================
+   СООБЩЕНИЯ ОБ УСПЕХЕ И ОШИБКАХ
+   ============================================= */
+/* Зелёное сообщение (успех) */
+.ok-msg {
+    padding: 12px 20px;
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+    border-radius: 8px;
+    font-weight: 600;
+    margin: 15px 0;
+}
+
+/* Красное сообщение (ошибка) */
+.error-msg {
+    padding: 12px 20px;
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+    border-radius: 8px;
+    font-weight: 600;
+    margin: 15px 0;
+}
+
+/* Нейтральное информационное сообщение */
+.info-msg {
+    padding: 12px 20px;
+    background-color: #f0f9ff;
+    color: #0c4a6e;
+    border: 1px solid #bae6fd;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+/* =============================================
+   ПОДВАЛ — приклеен через flex
+   ============================================= */
+.footer {
+    background-color: #4a4a4a;
+    color: #c0c0c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 15px;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* =============================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
+   ============================================= */
+@media (max-width: 900px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 12px 20px;
+        position: relative;
+    }
+
+    body {
+        padding-top: 20px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    .container {
+        padding: 18px;
+        margin-top: 10px;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .student-info {
+        text-align: center;
+    }
+
+    .food-table {
+        font-size: 0.75rem;
+        display: block;
+        overflow-x: auto;
+    }
+
+    #menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
